@@ -11,33 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= form.label :decription %>
-    <%= form.text_field :decription %>
-  </div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+          <div class="field form-group">
+            <%= form.text_field :title,
+            class:"form-control",
+            placeholder:"title" %>
+          </div>
 
-  <div class="field">
-    <%= form.label :movie_lenght %>
-    <%= form.text_field :movie_lenght %>
-  </div>
+          <div class="field form-group">
+            <%= form.text_field :decription,
+            class:"form-control",
+            placeholder:"description" %>
+          </div>
 
-  <div class="field">
-    <%= form.label :director %>
-    <%= form.text_field :director %>
-  </div>
+          <div class="field form-group">
+            <%= form.text_field :movie_lenght,
+            class:"form-control",
+            placeholder:"movie lenght" %>
+          </div>
 
+          <div class="field form-group">
+            <%= form.text_field :director,
+            class:"form-control",
+            placeholder:"director" %>
+          </div>
+    </h5>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
+    <p class="card-text">
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="field">
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+      </div> 
+    </p>
+    <a>
+      <%= link_to "New Movie", new_movie_path, class: "btn btn-primary" %>
+   </a>
   </div>
+</div>
+
 <% end %>
