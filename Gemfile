@@ -11,12 +11,15 @@ gem 'jquery-rails'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.4.2'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'paperclip', '~> 6.1'
-gem 'bootstrap', '~> 4.5', '>= 4.5.3'
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'sassc-rails', '>= 2.1.0'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'elasticsearch', '~> 7.10'
+gem 'searchkick', '~> 4.4', '>= 4.4.1'
+
+
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

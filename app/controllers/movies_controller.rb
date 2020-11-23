@@ -2,6 +2,13 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
+def search
+  if params[:search].present?
+    @movies = Movie.search(params[:search])
+  else
+    @movies = Movie.all
+  end
+end
 
   def index
     @movies = Movie.all
@@ -9,6 +16,9 @@ class MoviesController < ApplicationController
 
 
   def show
+    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
+
+ 
   end
 
 
