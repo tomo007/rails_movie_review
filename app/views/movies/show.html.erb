@@ -2,7 +2,7 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag @movie.image.url(:medium) %>
+        <%= image_tag(@movie.image_file_name, alt: 'Image') %>
         <div class="star-rating" data-score= <%= @avg_review %> ></div>
         <em><%= "#{@reviews.length} reviews" %></em>
         <div class="table-responsive">
@@ -44,7 +44,7 @@
         <% else %>
           <% @reviews.each do |review| %>
             <div class="reviews">
-              <div class="star-rating" data-score = <%= review.rating %>  style="width="200rem" height="200rem"" ></div>
+              <div class="star-rating" data-score = <%= review.rating %>></div>
               <p><%= review.comment %></p>
             </div>
           <% end %>
@@ -59,13 +59,11 @@
 
 
 <script>
-$(document).ready(function() {
 $(".star-rating").raty({
 path: "/assets/",
 readOnly: true,
 score: function() {
 return $(this).attr("data-score");
 }
-});
 });
 </script>

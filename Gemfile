@@ -17,6 +17,8 @@ gem 'paperclip', '~> 6.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'elasticsearch', '~> 7.10'
 gem 'searchkick', '~> 4.4', '>= 4.4.1'
+gem 'raty_ratings', '~> 1.2'
+gem 'themoviedb', '~> 1.0', '>= 1.0.1'
 
 
 

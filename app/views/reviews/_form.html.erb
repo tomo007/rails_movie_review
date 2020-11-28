@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <div id="star"></div>
   </div>
@@ -27,9 +28,11 @@
 
 
 <script>
+  $(document).ready(function() {
 $("#star").raty({
 path: "/assets/",
 scoreName: "review[rating]"
+});
 });
 </script>
 

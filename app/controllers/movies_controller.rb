@@ -18,6 +18,11 @@ end
   def show
     @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
 
+  if @reviews.blank?
+    @avg_review=0
+  else
+    @avg_review=@movie.reviews.average(:rating).round(2)
+  end
  
   end
 
@@ -33,6 +38,10 @@ end
 
   def create
     @movie = current_user.movies.build(movie_params)
+
+    Imdb::Movie.upcoming do |imdb_movie|
+      @movie=imdb_movie
+    end
 
     respond_to do |format|
       if @movie.save
