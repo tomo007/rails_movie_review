@@ -1,24 +1,25 @@
-# README
+Install Ruby & Rails
+ruby -v ruby 2.5.1
+rails -v Rails 5.1.6
+Follow these easy steps to install and start the app:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Set up Rails app
+First, install the gems required by the application:
 
-Things you may want to cover:
+bundle install 
+Setup database in config/database.yml
 
-* Ruby version
+Next, execute the database migrations/schema setup:
 
-* System dependencies
+bundle exec rake db:setup
+or
 
-* Configuration
+bundle exec rake db:schema:load
+Start the app
+You're ready to localize your app:
 
-* Database creation
+bundle exec rails server
+Import data from movidb API
+Import all genres
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rake get_movie_genres
